@@ -1,0 +1,533 @@
+deployment:
+  k8s:
+  
+    - module: pentium.gateone
+      
+      image: gateone
+      tag: 0.77.20190327163155
+      stage: byos
+      
+  
+    - module: core.tool.python.fileupload
+      
+      image: sftp
+      tag: 2d54421
+      stage: master
+      
+  
+    - module: core.tool.python.ofsm-runner
+      
+      image: ofsm-runner
+      tag: 0.86.20190416195749
+      stage: master
+          
+  
+    - module: core.tool.python.scripts
+      
+      image: scripts-service
+      tag: 0.91.20190507160750
+      stage: master
+      
+  
+    - module: core.cloudkit.v2
+      
+      image: cloudkit
+      tag: 0.2.20190425105519
+      stage: master
+      
+  
+    - module: core.python.ansible.api
+      
+      image: scripts-runner
+      tag: 201904172100.20190417211729
+      stage: dev
+      
+  
+    - module: core.tool.cronjob
+      
+      image: cronjob
+      tag: 1.1.0.20190315004313
+      stage: master
+      
+  
+    - module: platform.kafka
+      
+      image: kafka
+      tag: 1.5.1
+      stage: master
+      
+  
+    - module: platform.neo4j
+      
+      
+    - module: platform.service.fluentd
+      image: pentium-fluentd
+      tag: dev
+      stage: gde
+  
+  
+    - module: platform.service.eventbroker
+      
+      image: eventbroker
+      tag: 0.6.25.20190503133959
+      stage: master
+      
+  
+    - module: platform.service.upload
+      
+      image: upload
+      tag: 9cae58f
+      stage: master
+      
+  
+    - module: platform.web.api.gateway
+      
+      image: router
+      tag: 0.90.20190503135845
+      stage: master
+      
+  
+    - module: platform.web.v2
+      
+      image: portal-v2
+      tag: 0.91.2.20190508151707
+      stage: master
+      
+  
+    - module: platform.web
+      
+      image: portal
+      tag: 0.55.188c907
+      stage: dev
+      
+  
+
+  openfaas:
+  
+    - module: bindresolverkey
+      
+      image: bindresolverkey
+      tag: 0.90.20190503112156
+      stage: master
+      
+  
+    - module: buildresolverrelation
+      
+      image: buildresolverrelation
+      tag: 0.90.20190503114035
+      stage: master
+      
+  
+    - module: buildsubdomainsmapping
+      
+      image: buildsubdomainsmapping
+      tag: 795033d
+      stage: master
+      
+  
+    - module: bulkgetsubdomains
+      
+      image: bulkgetsubdomains
+      tag: c4bb9d2
+      stage: master
+      
+  
+    - module: commandaccounts
+      
+      image: commandaccounts
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: commandrbacroles
+      
+      image: commandrbacroles
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: commandusers
+      
+      image: commandusers
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: queryaccounts
+      
+      image: queryaccounts
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: commandattachments
+      
+      image: commandattachments
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: commandautocompletes
+      
+      image: commandautocompletes
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: queryautocompletes
+      
+      image: queryautocompletes
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: bulkmigration
+      
+      image: bulkmigration
+      tag: 0.90.20190503112156
+      stage: master
+      
+  
+    - module: bulkorigins
+      
+      image: bulkorigins
+      tag: 0.90.20190503114035
+      stage: master
+      
+  
+    - module: bulkpurge
+      
+      image: bulkpurge
+      tag: 0.90.5.20190503193038
+      stage: master
+      
+  
+    - module: bulkreqheaders
+      
+      image: bulkreqheaders
+      tag: 0.90.20190503120422
+      stage: master
+      
+  
+    - module: bulkresolver
+      
+      image: bulkresolver
+      tag: 0.90.5.20190503193038
+      stage: master
+      
+  
+    - module: bulksyncfqdn
+      
+      image: bulksyncfqdn
+      tag: 0.91.4.20190509001545
+      stage: master
+      
+  
+    - module: bulkwarmup
+      
+      image: bulkpurge
+      tag: 0.90.5.20190503193038
+      stage: master
+      
+  
+    - module: checkexpiredtime
+      
+      image: checkexpiredtime
+      tag: 0.90.20190503114035
+      stage: master
+      
+  
+    - module: invocations
+      
+      image: invocations
+      tag: d5e96a5
+      stage: master
+      
+  
+    - module: commandcallbackfailure
+      
+      image: commandcallbackfailure
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: commandcdncontents
+      
+      image: commandcdncontents
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: querycdncontents
+      
+      image: querycdncontents
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: commandcdns
+      
+      image: commandcdns
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: querycdns
+      
+      image: querycdns
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: commandcloudaccount
+      
+      image: commandcloudaccount
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: querycloudaccount
+      
+      image: querycloudaccount
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: domainmanagement
+      
+      image: domainmanagement
+      tag: 0.90.20190503111811
+      stage: master
+      
+  
+    - module: commandcloudproviders
+      
+      image: commandcloudproviders
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: querycloudproviders
+      
+      image: querycloudproviders
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: commanddomainresolvers
+      
+      image: commanddomainresolvers
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: querydomainresolvers
+      
+      image: querydomainresolvers
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: commanddomains
+      
+      image: commanddomains
+      tag: 0.91.4.20190509121852
+      stage: master
+      
+  
+    - module: querydomains
+      
+      image: querydomains
+      tag: 0.91.4.20190509121852
+      stage: master
+      
+  
+    - module: fileupload
+      
+      image: fileupload
+      tag: 0.91.4.20190508231225
+      stage: master
+      
+  
+    - module: commandhosts
+      
+      image: commandhosts
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: queryhosts
+      
+      image: queryhosts
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: commandkeypairs
+      
+      image: commandkeypairs
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: querykeypairs
+      
+      image: querykeypairs
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: commandkms
+      
+      image: commandkms
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: querykms
+      
+      image: querykms
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: commandplaybooklogs
+      
+      image: commandplaybooklogs
+      tag: e3ab8bd
+      stage: master
+      
+  
+    - module: queryplaybooklogs
+      
+      image: queryplaybooklogs
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: commandplaybooks
+      
+      image: commandplaybooks
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: queryplaybooks
+      
+      image: queryplaybooks
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: commandpolicies
+      
+      image: commandpolicies
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: querypolicies
+      
+      image: querypolicies
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: commandprojects
+      
+      image: commandprojects
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: queryprojects
+      
+      image: queryprojects
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: queryrbacroles
+      
+      image: queryrbacroles
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: commandregions
+      
+      image: commandregions
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: queryregions
+      
+      image: queryregions
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: queryservices
+      
+      image: queryservices
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: commandsubdomains
+      
+      image: commandsubdomains
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: querysubdomains
+      
+      image: querysubdomains
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: syncallfqdns
+      
+      image: syncallfqdns
+      tag: 0.91.4.20190508231225
+      stage: master
+      
+  
+    - module: syncfqdns
+      
+      image: syncfqdns
+      tag: 5ad5d5e
+      stage: master
+      
+  
+    - module: syncinstances
+      
+      image: syncinstances
+      tag: 0.90.20190503114035
+      stage: master
+      
+  
+    - module: querysyslogs
+      
+      image: querysyslogs
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+    - module: querytags
+      
+      image: querytags
+      tag: 0.91.3.20190508161220
+      stage: master
+      
+  
+
+package:
+  artifact: none
+provider:
+  gateway: http://192.168.89.30:31112/
+  name: openfaas
+service: openfaas-hello-world
